@@ -1,0 +1,12 @@
+model=DecisionTreeClassifier()
+model.fit(tra_data[:,:3],tra_data[:,3])
+res=model.predict(tex_data[:,:3])
+Res=(tex_data[:,3])==(res)
+'''
+检验正确率
+'''
+q=0
+for i in Res:
+    if(i==True):
+        q=q+1
+print('Correct rate :',q/len(res))
