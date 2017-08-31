@@ -1,0 +1,12 @@
+model=Sequential(
+    [
+        Dense(input_dim = 3, output_dim = 10),
+        Activation('relu'),
+        Dense(input_dim = 10, output_dim = 1),
+        Activation('sigmoid')
+    ]
+)
+model.compile(loss='binary_crossentropy',optimizer='adam',class_mode='binary')
+model.fit(tra_data[:,:3],tra_data[:,3],nb_epoch=1000, batch_size=1)
+
+predict_result=model.predict_classes(tex_data[:,:3])
