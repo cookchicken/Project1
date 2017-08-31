@@ -1,0 +1,10 @@
+from sklearn.metrics import roc_curve
+predict_result=model.predict(tex_data[:,:3]).reshape(len(tex_data))
+fpr,tpr,thresholds=roc_curve(tex_data[:,3],predict_result,pos_label=1)
+plt.plot(fpr,tpr,linewidth=2,label='ROC of CART')
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.xlim(0,1.05)
+plt.ylim(0,1.05)
+plt.legend(loc=4)
+plt.show()
