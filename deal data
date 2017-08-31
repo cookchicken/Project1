@@ -1,0 +1,5 @@
+inputfile='F:/新建文件夹/python范例程序/chapter6/chapter6/test/data/model.xls'
+data=pd.read_excel(inputfile)
+data=data.as_matrix()
+tra_data=data[:int(len(data)*0.8),:]
+tex_data=data[int(len(data)*0.8):,:]
