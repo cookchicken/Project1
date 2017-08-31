@@ -1,0 +1,13 @@
+from sklearn.metrics import confusion_matrix
+import matplotlib.pyplot as plt
+cm=confusion_matrix(tra_data[:,3],model.predict(tra_data[:,:3]))
+plt.matshow(cm,cmap=plt.cm.Greens)
+plt.colorbar()
+
+for i in range(len(cm)):
+    for j in range(len(cm)):
+        plt.annotate(cm[i,j],xy=(i,j),horizontalalignment='center', verticalalignment='center')
+
+plt.xlabel('Predicted label')
+plt.ylabel('True label')
+plt.show()
